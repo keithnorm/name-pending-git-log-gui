@@ -24,6 +24,9 @@ class Array
 end
 
 helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+
   def diff_for_file_path(commit, path)
     full_diff = Git::Diff.new(commit.instance_variable_get(:@base), commit.parents.first.sha, commit.sha).patch
     lines = full_diff.lines.to_a
@@ -39,7 +42,7 @@ end
 
 # root page
 get '/' do
-  git = Git.open(SiteConfig.repo_path)
-  @log =  git.log.since('1 week ago').path(params[:path] || 'public/stylesheets/sass')
+  git = Git.open(SiteConfig.project_dir)
+  @log =  git.log.since('1 week ago').path(params[:path] || '')
   haml :root
 end

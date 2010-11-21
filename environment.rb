@@ -8,9 +8,10 @@ require 'sinatra' unless defined?(Sinatra)
 
 configure do
   SiteConfig = OpenStruct.new(
-                 :title => 'Watchr',
+                 :title => 'Git Show',
                  :author => 'Your Name',
-                 :url_base => 'http://localhost:4567/'
+                 :url_base => 'http://localhost:4567/',
+                 :project_dir => '/Users/keithnorm/Sites/repo_monitor'
                )
 
   # load models
