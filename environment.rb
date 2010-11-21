@@ -2,7 +2,7 @@ require 'rubygems'
 require 'ruby-debug'
 require 'haml'
 require 'ostruct'
-require 'git'
+require 'vendor/gems/git-1.2.5/lib/git'
 
 require 'sinatra' unless defined?(Sinatra)
 
@@ -11,7 +11,7 @@ configure do
                  :title => 'Git Show',
                  :author => 'Your Name',
                  :url_base => 'http://localhost:4567/',
-                 :project_dir => '/Users/keithnorm/Sites/repo_monitor'
+                 :project_dir => '/Volumes/Groupon/groupon'
                )
 
   # load models
