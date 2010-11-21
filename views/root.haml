@@ -1,4 +1,17 @@
 %h2 Main Page
-%p Here is some text.
-%p Here is a <a href='/'>link</a>.
-%p ttys!
+%ul
+  - @log.each do |l|
+    %li
+      %p.commit_message= l.message
+      %ul.meta.clearfix
+        %li= l.committer.name
+        %li= l.committer_date
+
+      %ul.files
+        - l.files.each do |file|
+          %li.file_path
+            %a{:href => '#'} #{ file['status'] } #{ file['path'] }
+          %li.diff_container
+            %pre{:class => 'brush: diff'}
+              :preserve
+                #{ diff_for_file_path(l, file['path']) }

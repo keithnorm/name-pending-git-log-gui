@@ -2,13 +2,24 @@
 %html
   %head
     %title= @title || SiteConfig.title
+    %link{:href => '/shCore.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/shThemeFadeToGrey.css', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
+    %script{:type => 'text/javascript', :src => '/xregexp.js'}
+    %script{:type => 'text/javascript', :src => '/shCore.js'}
+    %script{:type => 'text/javascript', :src => '/shBrushDiff.js'}
+    %script{:type => 'text/javascript', :src => '/application.js'}
   %body
     #container
       #header
         #logo
           %h1
             %a{:href => '/'}= SiteConfig.title
+
+          %form{:action => '/', :method => 'get'}
+            %input{:type => 'text', :name => 'path'}
+            %input{:type => 'submit', :value => 'submit'} 
+
       #content= yield
       #footer
         %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"

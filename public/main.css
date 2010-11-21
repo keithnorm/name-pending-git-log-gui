@@ -4,8 +4,7 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 #container {
-  margin: 0 auto;
-  width: 800px;
+  width: 100%
 }
 #header {
   padding: 0.5em 0 0 0;
@@ -36,9 +35,15 @@ h4 { font-size: 1.3em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1.1em; }
 p {
-  margin-bottom: 1em;
+  margin: 0 0 20px 0;
   line-height: 1.3;
 }
+
+.commit_message {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
 a {
   color: #095EAE;
   font-weight: bold;
@@ -49,4 +54,57 @@ a:hover {
 }
 #logo a:hover {
   text-decoration: none;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 40px;
+}
+
+ul ul li {
+  margin-bottom: 0;
+}
+
+.diff_container {
+  display: none;
+}
+
+.meta, .files {
+  list-style: none;
+  padding: 0;
+}
+
+.meta {
+  margin-bottom: 10px;
+}
+
+.meta li {
+  float: left;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: block;
+}
+
+/* Syntax highlighter styles */
+.syntaxhighlighter .insertion {
+  color: #1fe537;
+}
+
+.syntaxhighlighter .deletion {
+  color: #f37373;
 }
