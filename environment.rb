@@ -11,7 +11,7 @@ configure do
                  :title => 'Git Show',
                  :author => 'Your Name',
                  :url_base => 'http://localhost:4567/',
-                 :project_dir => '/Volumes/Groupon/groupon'
+                 :project_dir => '/path/to/your/app'
                )
 
   # load models
